@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: API de Autenticación y Registro
+  description: >
+    Esta API permite registrar usuarios y realizar login para acceder a zonas protegidas mediante JWT.
+
+servers:
+  - url: http://localhost:8081
+
+paths:
+  /api/register:
+    post:
+      summary: Registro de usuario
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nombre
+                - apellido
+                - fecha_nacimiento
+                - genero
+                - correo
+                - telefono
+                - contrasena
+                - rol_id
+              properties:
+                nombre:
+                  type: string
+                apellido:
+                  type: string
+                fecha_nacimiento:
+                  type: string
+                  format: date
+                genero:
+                  type: string
+                correo:
+                  type: string
+                  format: email
+                telefono:
+                  type: string
+                contrasena:
+                  type: string
+                rol_id:
+                  type: integer
+      responses:
+        '201':
+          description: Usuario registrado correctamente
+        '400':
+          description: Error de validación
+        '500':
+          description: Error interno
+
+  /api/login:
+    post:
+      summary: Iniciar sesión
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - correo
+                - contrasena
+              properties:
+                correo:
+                  type: string
+                  format: email
+                contrasena:
+                  type: string
+      responses:
+        '200':
+          description: Login exitoso
+        '401':
+          description: Credenciales inválidas
+        '404':
+          description: Usuario no encontrado

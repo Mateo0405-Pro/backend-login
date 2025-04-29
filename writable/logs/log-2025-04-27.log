@@ -1,0 +1,865 @@
+ERROR - 2025-04-27 21:15:54 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\cursos\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'bdd_login', 3306, '', 0)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\xampp\htdocs\cursos\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 21:15:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_usuarios` (`nombre`, `apellido`, `fecha_nacimiento`, `genero`, `correo`, `telefono`, `contraseÃ±a`, `rol_id`) VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :contraseÃ±a:, :rol_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(37): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 21:36:13 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "sqlsrv" is not loaded. Install and enable it to use "SQLSRV" driver.
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('SQLSRV')
+ 2 SYSTEMPATH\Database\Config.php(84): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\AuthController.php(14): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\AuthController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:01:36 --> CodeIgniter\Exceptions\CriticalError: The required PHP extension "sqlsrv" is not loaded. Install and enable it to use "SQLSRV" driver.
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\Database.php on line 182.
+ 1 SYSTEMPATH\Database\Database.php(59): CodeIgniter\Database\Database->checkDbExtension('SQLSRV')
+ 2 SYSTEMPATH\Database\Config.php(84): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\AuthController.php(14): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\AuthController->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 22:17:40 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:17:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bdd_login"."dbo"."tbl_usuarios" ("nombre","apellido","fecha_nacimiento","genero","correo","telefono","contraseÃ±a","rol_id") VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :contraseÃ±a:, :rol_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(37): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:17:41 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#2 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#3 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#4 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-04-27 22:23:05 --> ErrorException: Undefined array key "contrasena"
+[Method: POST, Route: api/register]
+in APPPATH\Controllers\AuthController.php on line 33.
+ 1 APPPATH\Controllers\AuthController.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "contrasena"', 'C:\\xampp\\htdocs\\cursos\\app\\Controllers\\AuthController.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 22:23:58 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:23:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bdd_login"."dbo"."tbl_usuarios" ("nombre","apellido","fecha_nacimiento","genero","correo","telefono","rol_id") VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :rol_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(37): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:23:58 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#2 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#3 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#4 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-04-27 22:30:58 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:30:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bdd_login"."dbo"."tbl_usuarios" ("nombre","apellido","fecha_nacimiento","genero","correo","telefono","rol_id") VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :rol_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(37): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:30:58 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#2 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#3 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#4 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-04-27 22:34:04 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:34:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bdd_login"."dbo"."tbl_usuarios" ("nombre","apellido","fecha_nacimiento","genero","correo","telefono","rol_id") VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :rol_id:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(37): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:34:04 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#2 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#3 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#4 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(37): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-04-27 22:38:18 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(33): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:38:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bdd_login"."dbo"."tbl_usuarios" ("nombre","apellido","fecha_nacimiento","genero","correo","telefono","contrasena","rol_id","fecha_registro") VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :contrasena:, :rol_id:, :fecha_registro:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(33): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:38:18 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#2 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#3 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#4 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(33): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-04-27 22:43:23 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(33): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:43:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bdd_login"."dbo"."tbl_usuarios" ("nombre","apellido","fecha_nacimiento","genero","correo","telefono","contrasena","rol_id","fecha_registro") VALUES (:nombre:, :apellido:, :fecha_nacimiento:, :genero:, :correo:, :telefono:, :contrasena:, :rol_id:, :fecha_registro:)', [...], false)
+ 3 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 4 SYSTEMPATH\BaseModel.php(839): CodeIgniter\Model->doInsert([...])
+ 5 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 6 APPPATH\Controllers\AuthController.php(33): CodeIgniter\Model->insert([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 22:43:23 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Database\Exceptions\DatabaseException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 8)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Database\Exceptions\DatabaseException
+Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#2 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#3 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#4 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(33): CodeIgniter\Model->insert(Array)
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-04-27 22:45:32 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:45:32 --> TypeError: CodeIgniter\Debug\Toolbar::run(): Return value must be of type string, bool returned
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Debug\Toolbar.php on line 188.
+ 1 SYSTEMPATH\Debug\Toolbar.php(390): CodeIgniter\Debug\Toolbar->run(1745793916.550315, 15.8293, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 2 SYSTEMPATH\Filters\DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 3 SYSTEMPATH\Filters\Filters.php(278): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+ 4 SYSTEMPATH\Filters\Filters.php(364): CodeIgniter\Filters\Filters->runAfter([...])
+ 5 SYSTEMPATH\CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired('after')
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters(Object(CodeIgniter\Filters\Filters))
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 22:53:41 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:53:41 --> TypeError: CodeIgniter\Debug\Toolbar::run(): Return value must be of type string, bool returned
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Debug\Toolbar.php on line 188.
+ 1 SYSTEMPATH\Debug\Toolbar.php(390): CodeIgniter\Debug\Toolbar->run(1745794405.772802, 15.8456, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 2 SYSTEMPATH\Filters\DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 3 SYSTEMPATH\Filters\Filters.php(278): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+ 4 SYSTEMPATH\Filters\Filters.php(364): CodeIgniter\Filters\Filters->runAfter([...])
+ 5 SYSTEMPATH\CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired('after')
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters(Object(CodeIgniter\Filters\Filters))
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 22:56:09 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:56:09 --> TypeError: CodeIgniter\Debug\Toolbar::run(): Return value must be of type string, bool returned
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Debug\Toolbar.php on line 188.
+ 1 SYSTEMPATH\Debug\Toolbar.php(390): CodeIgniter\Debug\Toolbar->run(1745794554.145044, 15.8055, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 2 SYSTEMPATH\Filters\DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 3 SYSTEMPATH\Filters\Filters.php(278): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+ 4 SYSTEMPATH\Filters\Filters.php(364): CodeIgniter\Filters\Filters->runAfter([...])
+ 5 SYSTEMPATH\CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired('after')
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters(Object(CodeIgniter\Filters\Filters))
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 22:58:07 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 22:58:07 --> TypeError: CodeIgniter\Debug\Toolbar::run(): Return value must be of type string, bool returned
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Debug\Toolbar.php on line 188.
+ 1 SYSTEMPATH\Debug\Toolbar.php(390): CodeIgniter\Debug\Toolbar->run(1745794671.372953, 15.8237, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 2 SYSTEMPATH\Filters\DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 3 SYSTEMPATH\Filters\Filters.php(278): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+ 4 SYSTEMPATH\Filters\Filters.php(364): CodeIgniter\Filters\Filters->runAfter([...])
+ 5 SYSTEMPATH\CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired('after')
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters(Object(CodeIgniter\Filters\Filters))
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 23:00:30 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 23:00:30 --> TypeError: CodeIgniter\Debug\Toolbar::run(): Return value must be of type string, bool returned
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Debug\Toolbar.php on line 188.
+ 1 SYSTEMPATH\Debug\Toolbar.php(390): CodeIgniter\Debug\Toolbar->run(1745794814.4125, 15.8463, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 2 SYSTEMPATH\Filters\DebugToolbar.php(44): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+ 3 SYSTEMPATH\Filters\Filters.php(278): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), null)
+ 4 SYSTEMPATH\Filters\Filters.php(364): CodeIgniter\Filters\Filters->runAfter([...])
+ 5 SYSTEMPATH\CodeIgniter.php(407): CodeIgniter\Filters\Filters->runRequired('after')
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->runRequiredAfterFilters(Object(CodeIgniter\Filters\Filters))
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+ERROR - 2025-04-27 23:04:10 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2025-04-27 23:10:23 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2025-04-27 23:12:19 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2025-04-27 23:12:19 --> CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 SYSTEMPATH\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8 characters, possibly incorrectly encoded')
+ 2 SYSTEMPATH\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format([...])
+ 3 SYSTEMPATH\API\ResponseTrait.php(103): CodeIgniter\RESTful\ResourceController->format([...])
+ 4 SYSTEMPATH\API\ResponseTrait.php(140): CodeIgniter\RESTful\ResourceController->respond([...], 500, '')
+ 5 SYSTEMPATH\API\ResponseTrait.php(280): CodeIgniter\RESTful\ResourceController->fail([...], 500, null, '')
+ 6 APPPATH\Controllers\AuthController.php(42): CodeIgniter\RESTful\ResourceController->failServerError('Unable to connect to the database.
+Main connection [SQLSRV]: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-27 23:12:19 --> ErrorException: Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded in C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php:45
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\Debug\ExceptionHandler->format(Array)
+#3 C:\xampp\htdocs\cursos\system\Debug\ExceptionHandler.php(85): CodeIgniter\Debug\ExceptionHandler->respond(Array, 500)
+#4 C:\xampp\htdocs\cursos\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(CodeIgniter\Format\Exceptions\FormatException), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Format\Exceptions\FormatException))
+#6 {main}
+  thrown
+ã€Previous Exceptionã€‘
+CodeIgniter\Format\Exceptions\FormatException
+Failed to parse JSON string. Error: Malformed UTF-8 characters, possibly incorrectly encoded
+#0 C:\xampp\htdocs\cursos\system\Format\JSONFormatter.php(45): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Malformed UTF-8...')
+#1 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(345): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(103): CodeIgniter\RESTful\ResourceController->format(Array)
+#3 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(140): CodeIgniter\RESTful\ResourceController->respond(Array, 500, '')
+#4 C:\xampp\htdocs\cursos\system\API\ResponseTrait.php(280): CodeIgniter\RESTful\ResourceController->fail(Array, 500, NULL, '')
+#5 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(42): CodeIgniter\RESTful\ResourceController->failServerError('Unable to conne...')
+#6 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+[Method: POST, Route: api/register]
+in SYSTEMPATH\Format\JSONFormatter.php on line 45.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-04-27 23:16:57 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server]TCP Provider: No se puede establecer una conexiÃ³n ya que el equipo de destino denegÃ³ expresamente dicha conexiÃ³n.
+ SQLSTATE: 08001, code: 10061
+[Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired SQLSTATE: HYT00, code: 0
+[Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. SQLSTATE: 08001, code: 10061 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2025-04-27 23:20:22 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'sa'. SQLSTATE: 28000, code: 18456 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+ERROR - 2025-04-27 23:24:41 --> Error connecting to the database: CodeIgniter\Database\Exceptions\DatabaseException: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Login failed for user 'sa'. SQLSTATE: 28000, code: 18456 in C:\xampp\htdocs\cursos\system\Database\SQLSRV\Connection.php:145
+Stack trace:
+#0 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(421): CodeIgniter\Database\SQLSRV\Connection->connect(false)
+#1 C:\xampp\htdocs\cursos\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\cursos\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO "bd...', Array, false)
+#3 C:\xampp\htdocs\cursos\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#4 C:\xampp\htdocs\cursos\system\BaseModel.php(839): CodeIgniter\Model->doInsert(Array)
+#5 C:\xampp\htdocs\cursos\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#6 C:\xampp\htdocs\cursos\app\Controllers\AuthController.php(35): CodeIgniter\Model->insert(Array)
+#7 C:\xampp\htdocs\cursos\system\CodeIgniter.php(933): App\Controllers\AuthController->register()
+#8 C:\xampp\htdocs\cursos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\xampp\htdocs\cursos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\cursos\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\cursos\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\cursos\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\cursos\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}

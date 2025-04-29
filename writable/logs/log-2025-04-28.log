@@ -1,0 +1,47 @@
+ERROR - 2025-04-28 00:01:51 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0999999999).
+ERROR - 2025-04-28 00:10:10 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0999999999).
+ERROR - 2025-04-28 00:11:15 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0999999999).
+ERROR - 2025-04-28 00:11:54 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0999999999).
+ERROR - 2025-04-28 00:21:21 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0999999999).
+ERROR - 2025-04-28 00:21:48 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0999999999).
+ERROR - 2025-04-28 00:24:07 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987654321).
+ERROR - 2025-04-28 00:25:02 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987654321).
+ERROR - 2025-04-28 00:25:33 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987654321).
+ERROR - 2025-04-28 00:27:14 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987654321).
+ERROR - 2025-04-28 00:28:45 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987654321).
+ERROR - 2025-04-28 00:30:37 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_correo'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (carlos.mendoza2@example.com).
+ERROR - 2025-04-28 00:30:51 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987655551).
+ERROR - 2025-04-28 01:15:48 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_correo'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (jose.sanchez@example.com).
+ERROR - 2025-04-28 01:16:06 --> [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Violation of UNIQUE KEY constraint 'UQ_tbl_usuarios_telefono'. Cannot insert duplicate key in object 'dbo.tbl_usuarios'. The duplicate key value is (0987654001).
+CRITICAL - 2025-04-28 01:16:35 --> CodeIgniter\HTTP\Exceptions\HTTPException: Failed to parse JSON string. Error: Syntax error
+[Method: POST, Route: api/register]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 537.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(537): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidJSON('Syntax error')
+ 2 APPPATH\Controllers\AuthController.php(22): CodeIgniter\HTTP\IncomingRequest->getJSON(true)
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->register()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-28 01:17:04 --> Error: Call to undefined method App\Controllers\AuthController::failValidationError()
+[Method: POST, Route: api/login]
+in APPPATH\Controllers\AuthController.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
+CRITICAL - 2025-04-28 01:17:16 --> Error: Call to undefined method App\Controllers\AuthController::failValidationError()
+[Method: POST, Route: api/login]
+in APPPATH\Controllers\AuthController.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AuthController->login()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\cursos\\public\\index.php')
